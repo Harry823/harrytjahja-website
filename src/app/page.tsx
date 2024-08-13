@@ -1,17 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Stack, styled, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import MainContainer from "@/components/MainContainer";
 
 const Home = () => {
   return (
-    <Stack>
+    <MainContainer>
       <Typography variant="h1">Testing MUI</Typography>
-    </Stack>
+    </MainContainer>
   );
 }
 
 export default Home;
-
-// const MainContainer = styled(Stack)({
-//   color: "ebfefe",
-// });
