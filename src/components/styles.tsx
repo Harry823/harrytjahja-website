@@ -22,6 +22,19 @@ export const SubheaderCopy = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const PageCopy = styled(Typography)({
-  color: '#027f7f'
-});
+export const PageCopy = styled(Typography)(({ theme }) => ({
+  color: '#027f7f',
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1rem',
+  },
+}));
+
+export const YearLabel = styled(Typography)(({ theme }) => ({
+  color: '#03b7b7',
+  fontWeight: 'bold',
+  margin: '10px 0',
+  [theme.breakpoints.down('md')]: {
+    fontSize: 16,
+    margin: '6px 0'
+  },
+}));
