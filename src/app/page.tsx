@@ -1,4 +1,6 @@
 import { HeadingCopy, MainContainer, PageCopy, SubheaderCopy, YearLabel } from "@/components/styles";
+import { EXPERIENCE_LIST } from '@/shared/constants';
+import { Stack } from "@mui/material";
 
 const Home = () => {
   return (
@@ -28,31 +30,19 @@ const Home = () => {
       <SubheaderCopy variant="h3" margin="24px 0">
         Experience
       </SubheaderCopy>
-      <YearLabel variant="h6">
-        2022 - 2024
-      </YearLabel>
-      <SubheaderCopy variant="h3" margin="0 0 16px">
-        Software Developer - Yeti LLC
-      </SubheaderCopy>
-      <PageCopy variant="body1" mb="24px">
-        - Collaborated with other developers using Agile and Scrum techniques to deliver quality software.
-        - Built user-friendly, responsive web application through integrated QA process and designer feedback.
-        - Deployed and maintained production level apps with thousands of users using React.js.
-        - Improved project management by building an automated progress tracking app using Jira’s API.
-        - Implemented admin portal that processes hundreds of user-submitted data with Hygraph CMS.
-      </PageCopy>
-      <YearLabel variant="h6">
-        2020 - 2021
-      </YearLabel>
-      <SubheaderCopy variant="h3" margin="0 0 16px">
-        Junior Software Engineer - Speckle
-      </SubheaderCopy>
-      <PageCopy variant="body1" mb="24px">
-        - Collaborated in a fast paced startup using Agile methods to develop a mobile app for public speaking.
-        - Built UX components with client-server API integration using Typescript and React Native.
-        - Translated design prototypes into a functional cross-platform mobile app.
-        - Deployed biweekly staging updates and conducted user testing focusing on bugs and feature feedback.
-      </PageCopy>
+      {EXPERIENCE_LIST.map((work, i) => (
+        <Stack key={i}>
+          <YearLabel variant="h6">
+            {work.experienceTime}
+          </YearLabel>
+          <SubheaderCopy variant="h3" margin="0 0 16px">
+            {work.companyPosition}
+          </SubheaderCopy>
+          <PageCopy variant="body1" mb="24px">
+            {work.positionDescription}
+          </PageCopy>
+        </Stack>
+      ))}
     </MainContainer>
   );
 }
