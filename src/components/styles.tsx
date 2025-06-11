@@ -6,7 +6,15 @@ export const MainContainer = styled(Stack)({
   backgroundColor: "#ebfefe",
   minHeight: '100vh',
   padding: '40px 32px',
+  gap: '24px',
 });
+
+export const ExperienceContainer = styled(Stack)(({ theme }) => ({
+  gap: '10px',
+  [theme.breakpoints.down('md')]: {
+    gap: '6px',
+  },
+}));
 
 export const HeadingCopy = styled(Typography)(({ theme }) => ({
   color: '#025f5f',
@@ -32,9 +40,7 @@ export const PageCopy = styled(Typography)(({ theme }) => ({
 export const YearLabel = styled(Typography)(({ theme }) => ({
   color: '#03b7b7',
   fontWeight: 'bold',
-  margin: '10px 0',
   [theme.breakpoints.down('md')]: {
     fontSize: 16,
-    margin: '6px 0'
   },
 }));
