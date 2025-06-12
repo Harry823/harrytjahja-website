@@ -1,95 +1,80 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { ExperienceContainer, HeadingCopy, MainContainer, PageCopy, ResumeButton, SubheaderCopy, SubTitleContainer, YearLabel } from "@/components/styles";
+import { ABOUT_ME, EXPERIENCE_LIST } from '@/shared/constants';
+import { Button, Link, List, ListItem, Stack } from "@mui/material";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+    <MainContainer>
+      <Stack>
+        <HeadingCopy variant="h1" mb="14px">Harry Tjahja</HeadingCopy>
+        <SubTitleContainer>
+          <SubheaderCopy variant="h3" mb="20px">Software Developer</SubheaderCopy>
+          <PageCopy variant="h5">
+            I build seamless, user-friendly app solutions for both web and mobile platforms
+          </PageCopy>
+        </SubTitleContainer>
+      </Stack>
+      <Stack gap="36px">
+        <SubheaderCopy variant="h3">
+          About Me
+        </SubheaderCopy>
+        <Stack gap="14px">
+          {ABOUT_ME.map((paragraph, id) => (
+            <PageCopy variant="body1" key={id}>
+              {paragraph}
+            </PageCopy>
+          ))}
+        </Stack>
+      </Stack>
+      <Stack gap="24px">
+        <SubheaderCopy variant="h3" mb="12px">
+          Experience
+        </SubheaderCopy>
+        {EXPERIENCE_LIST.map((work, i) => (
+          <ExperienceContainer key={i}>
+            <YearLabel variant="h6">
+              {work.experienceTime}
+            </YearLabel>
+            <SubheaderCopy variant="h3">
+              {work.companyPosition}
+            </SubheaderCopy>
+            <List dense disablePadding>
+              {work.positionDescription.map((point, i) => (
+                  <ListItem key={i}>
+                    <PageCopy variant="body1">
+                      {point}
+                    </PageCopy>
+                  </ListItem>
+              ))}
+            </List>
+          </ExperienceContainer>
+        ))}
+      </Stack>
+      <Stack gap="24px">
+        <SubheaderCopy variant="h3">
+          Get in Touch
+        </SubheaderCopy>
+        <PageCopy variant="h5">
+          I&apos;m currently open for new opportunities!
+          Feel free to reach out to me through{' '}
+          <Link href="https://www.linkedin.com/in/harrytjahja" target="_blank" color="#025f5f">
+            LinkedIn
+          </Link>
+          {' '}or{' '}
+          <Link href="mailto:hdtjahja@gmail.com" color="#025f5f">
+            email.
+          </Link>
+        </PageCopy>
+        <ResumeButton
+          underline="none"
+          href="https://drive.google.com/file/d/1QA7Qe8Ym_btNkhf602gmjAEGaxkChkPb/view?usp=drive_link"
           target="_blank"
-          rel="noopener noreferrer"
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          View Full Resume
+        </ResumeButton>
+      </Stack>
+    </MainContainer>
   );
 }
+
+export default Home;
