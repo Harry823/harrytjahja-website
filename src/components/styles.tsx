@@ -1,13 +1,19 @@
 'use client';
-import { Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainContainer = styled(Stack)({
   backgroundColor: "#ebfefe",
   minHeight: '100vh',
-  padding: '40px 32px',
-  gap: '24px',
+  padding: '64px 48px',
+  gap: '72px',
 });
+
+export const SubTitleContainer = styled(Stack)(({ theme }) => ({
+  [theme.breakpoints.between('sm', 'md')]: {
+    maxWidth: '40%',
+  },
+}));
 
 export const ExperienceContainer = styled(Stack)(({ theme }) => ({
   gap: '10px',
@@ -44,3 +50,11 @@ export const YearLabel = styled(Typography)(({ theme }) => ({
     fontSize: 16,
   },
 }));
+
+export const ResumeButton = styled(Link)({
+  color: '#025f5f',
+  fontWeight: 'bold',
+  float: 'left',
+  width: 'fit-content',
+  padding: 0,
+})
