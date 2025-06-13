@@ -73,6 +73,20 @@ const Home = () => {
           View Full Resume
         </ResumeButton>
       </Stack>
+      <PageCopy align="right">
+        Built with{' '}
+        <Link href="https://nextjs.org/" target="_blank" color="#025f5f">
+            Next.js
+        </Link>
+        {' '}and{' '}
+        <Link href="https://mui.com/" target="_blank" color="#025f5f">
+          Material UI
+        </Link>
+        , deployed using{' '}
+        <Link href="http://vercel.com/" target="_blank" color="#025f5f">
+          Vercel.
+        </Link>
+      </PageCopy>
     </MainContainer>
   );
 }
