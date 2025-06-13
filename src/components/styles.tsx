@@ -1,12 +1,11 @@
 'use client';
-import { Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainContainer = styled(Stack)({
   backgroundColor: "#ebfefe",
   minHeight: '100vh',
   padding: '64px 48px',
-  gap: '72px',
 });
 
 export const SubTitleContainer = styled(Stack)(({ theme }) => ({

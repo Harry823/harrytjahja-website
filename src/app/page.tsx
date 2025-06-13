@@ -1,10 +1,10 @@
 import { ExperienceContainer, HeadingCopy, MainContainer, PageCopy, ResumeButton, SubheaderCopy, SubTitleContainer, YearLabel } from "@/components/styles";
 import { ABOUT_ME, EXPERIENCE_LIST } from '@/shared/constants';
-import { Button, Link, List, ListItem, Stack } from "@mui/material";
+import { Link, List, ListItem, Stack } from "@mui/material";
 
 const Home = () => {
   return (
-    <MainContainer>
+    <MainContainer spacing="72px">
       <Stack>
         <HeadingCopy variant="h1" mb="14px">Harry Tjahja</HeadingCopy>
         <SubTitleContainer>
@@ -14,7 +14,7 @@ const Home = () => {
           </PageCopy>
         </SubTitleContainer>
       </Stack>
-      <Stack gap="36px">
+      <Stack spacing="36px" id="about-me">
         <SubheaderCopy variant="h3">
           About Me
         </SubheaderCopy>
@@ -26,7 +26,7 @@ const Home = () => {
           ))}
         </Stack>
       </Stack>
-      <Stack gap="24px">
+      <Stack spacing="24px" id="experience">
         <SubheaderCopy variant="h3" mb="12px">
           Experience
         </SubheaderCopy>
@@ -50,7 +50,7 @@ const Home = () => {
           </ExperienceContainer>
         ))}
       </Stack>
-      <Stack gap="24px">
+      <Stack spacing="24px" id="contact-me">
         <SubheaderCopy variant="h3">
           Get in Touch
         </SubheaderCopy>
@@ -73,6 +73,20 @@ const Home = () => {
           View Full Resume
         </ResumeButton>
       </Stack>
+      <PageCopy align="right">
+        Built with{' '}
+        <Link href="https://nextjs.org/" target="_blank" color="#025f5f">
+            Next.js
+        </Link>
+        {' '}and{' '}
+        <Link href="https://mui.com/" target="_blank" color="#025f5f">
+          Material UI
+        </Link>
+        , deployed using{' '}
+        <Link href="http://vercel.com/" target="_blank" color="#025f5f">
+          Vercel.
+        </Link>
+      </PageCopy>
     </MainContainer>
   );
 }
