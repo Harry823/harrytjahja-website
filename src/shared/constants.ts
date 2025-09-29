@@ -1,4 +1,4 @@
-import { WorkExperience } from "./types";
+import { Project, WorkExperience } from "./types";
 
 export const ABOUT_ME = [
   "I’m a software engineer with over 3 years of experience building web and mobile\
@@ -46,4 +46,31 @@ export const EXPERIENCE_LIST: WorkExperience[] = [
         and ensure alignment with product requirements and the owner’s quality expectations.'
   ]
   },
+];
+
+export const PROJECT_LIST: Project[] = [
+  {
+    projectName: 'WhyBot AI Mobile App',
+    experienceTime: 'June 2023',
+    projectDescription: 'Collaborated in a hackathon with developers at Yeti to integrrate OpenAI’s\
+     ChatGPT API to create a mobile app that dynamically responds to voice-inputted questions.\
+      Developed an interactive feature enabling users to request simplified explanations or\
+       continuously ask "why," showcasing the LLM model’s ability to condense and refine information.'
+  },
+  {
+    projectName: 'FinPal – Stock Portfolio Financial Advisor',
+    experienceTime: 'August 2025',
+    projectDescription: 'Developed an AI-powered Next.js web app that delivers investment advice\
+     from voice-inputted prompts. Integrated an API that analyzes market data and generates clear\
+      and simple recommendations with confidence scores, rationale, and cited sources.'
+  },
+  {
+    projectName: 'AI News Curator',
+    experienceTime: 'August 2025 – Present',
+    projectDescription: 'Developed a React Native mobile app utilizing Google Gemini AI \
+    to personalize news curation based on user interests. Evaluated API endpoints with\
+      Postman to assess scalability and use cases, and integrated them to gather articles \
+      from various sources. Applied Gemini LLM to filter fetched articles and deliver the most \
+      relevant articles aligned with user preferences.'
+  }
 ];
