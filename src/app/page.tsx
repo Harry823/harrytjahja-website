@@ -49,6 +49,8 @@ const Home = () => {
             </List>
           </ExperienceContainer>
         ))}
+      </Stack>
+      <Stack spacing="24px" id="experience">
         <SubheaderCopy variant="h3" margin="24px 0">
           Projects
         </SubheaderCopy>
