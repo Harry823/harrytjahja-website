@@ -1,5 +1,5 @@
 import { ExperienceContainer, HeadingCopy, MainContainer, PageCopy, ResumeButton, SubheaderCopy, SubTitleContainer, YearLabel } from "@/components/styles";
-import { ABOUT_ME, EXPERIENCE_LIST } from '@/shared/constants';
+import { ABOUT_ME, EXPERIENCE_LIST, PROJECT_LIST } from '@/shared/constants';
 import { Link, List, ListItem, Stack } from "@mui/material";
 
 const Home = () => {
@@ -48,6 +48,24 @@ const Home = () => {
               ))}
             </List>
           </ExperienceContainer>
+        ))}
+      </Stack>
+      <Stack spacing="24px" id="experience">
+        <SubheaderCopy variant="h3" margin="24px 0">
+          Projects
+        </SubheaderCopy>
+        {PROJECT_LIST.map((project, i) => (
+          <Stack key={i}>
+            <YearLabel variant="h6">
+              {project.experienceTime}
+            </YearLabel>
+            <SubheaderCopy variant="h3" margin="0 0 16px">
+              {project.projectName}
+            </SubheaderCopy>
+            <PageCopy variant="body1" mb="24px">
+              {project.projectDescription}
+            </PageCopy>
+          </Stack>
         ))}
       </Stack>
       <Stack spacing="24px" id="contact-me">
