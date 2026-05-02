@@ -36,7 +36,7 @@ const Home = () => {
               {work.experienceTime}
             </YearLabel>
             <SubheaderCopy variant="h3">
-              {work.companyPosition}
+              {`${work.role} - ${work.company}`}
             </SubheaderCopy>
             <List dense disablePadding>
               {work.positionDescription.map((point, i) => (
