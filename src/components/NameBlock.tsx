@@ -5,12 +5,15 @@ export default function NameBlock() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div
+    <button
+      type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="cursor-pointer select-none"
+      aria-label="Scroll back to top"
+      className="cursor-pointer select-none text-left bg-transparent border-0 p-0 block"
     >
+    </button>
       <div className="text-[17px] font-semibold text-primary tracking-[-0.02em] mb-1">
         Harry Tjahja
       </div>
