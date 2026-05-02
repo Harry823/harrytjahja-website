@@ -13,7 +13,6 @@ export default function NameBlock() {
       aria-label="Scroll back to top"
       className="cursor-pointer select-none text-left bg-transparent border-0 p-0 block"
     >
-    </button>
       <div className="text-[17px] font-semibold text-primary tracking-[-0.02em] mb-1">
         Harry Tjahja
       </div>
@@ -29,6 +28,6 @@ export default function NameBlock() {
       >
         BACK TO TOP ↑
       </div>
-    </div>
+    </button>
   );
 }
