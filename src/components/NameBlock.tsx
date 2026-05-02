@@ -1,0 +1,31 @@
+'use client';
+import { useState } from 'react';
+
+export default function NameBlock() {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="cursor-pointer select-none"
+    >
+      <div className="text-[17px] font-semibold text-primary tracking-[-0.02em] mb-1">
+        Harry Tjahja
+      </div>
+      <div className="font-mono text-[11px] text-accent tracking-[0.06em]">
+        SOFTWARE ENGINEER
+      </div>
+      <div
+        className="font-mono text-[9px] text-muted tracking-[0.1em] mt-1.5 transition-all duration-200 pointer-events-none"
+        style={{
+          opacity: hovered ? 1 : 0,
+          transform: hovered ? 'translateY(0)' : 'translateY(-4px)',
+        }}
+      >
+        BACK TO TOP ↑
+      </div>
+    </div>
+  );
+}
