@@ -1,11 +1,13 @@
 export type WorkExperience = {
-  companyPosition: string,
-  experienceTime: string,
-  positionDescription: string[],
+  company: string;
+  role: string;
+  experienceTime: string;
+  positionDescription: string[];
 };
 
 export type Project = {
-  projectName: string,
-  experienceTime: string,
-  projectDescription: string,
+  projectName: string;
+  experienceTime: string;
+  projectDescription: string;
+  tags: string[];
 };
