@@ -50,7 +50,7 @@ const Home = () => {
           </ExperienceContainer>
         ))}
       </Stack>
-      <Stack spacing="24px" id="experience">
+      <Stack spacing="24px" id="projects">
         <SubheaderCopy variant="h3" margin="24px 0">
           Projects
         </SubheaderCopy>
