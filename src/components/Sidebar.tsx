@@ -18,11 +18,10 @@ export default function Sidebar() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        }
+        const winner = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (winner) setActiveId(winner.target.id);
       },
       { rootMargin: '-40% 0px -55% 0px' }
     );
@@ -36,7 +35,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 w-[220px] h-screen z-50 bg-surface border-r border-border flex flex-col px-7 py-10">
+    <aside className="fixed left-0 top-0 w-[220px] h-screen overflow-y-auto z-50 bg-surface border-r border-border flex flex-col px-7 py-10">
       <NameBlock />
 
       <nav className="flex-1 mt-10 flex flex-col gap-1">
