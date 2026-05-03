@@ -11,3 +11,8 @@ export type Project = {
   projectDescription: string;
   tags: string[];
 };
+
+export interface SkillCategory {
+  category: string;
+  items: string[];
+}

@@ -1,4 +1,4 @@
-import { Project, WorkExperience } from "./types";
+import { Project, SkillCategory, WorkExperience } from "./types";
 
 export const ABOUT_ME = [
   "Software Engineer with 3+ years of experience building web and mobile platforms from system design to production release. Shipped React/TypeScript products used by thousands of users, integrated RESTful APIs into production codebases, and built automated testing pipelines that reduced QA overhead by 30%.",
@@ -53,7 +53,7 @@ export const PROJECT_LIST: Project[] = [
   },
 ];
 
-export const SKILLS_LIST = [
+export const SKILLS_LIST: SkillCategory[] = [
   { category: 'Languages',    items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'C++'] },
   { category: 'Frontend',     items: ['React', 'React Native', 'Next.js', 'Tailwind CSS', 'Redux', 'HTML', 'CSS', 'Material UI'] },
   { category: 'Backend',      items: ['Node.js', 'Express', 'REST APIs', 'CRON Jobs'] },
