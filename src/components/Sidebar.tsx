@@ -2,14 +2,7 @@
 import { useEffect, useState } from 'react';
 import NameBlock from './NameBlock';
 import { useTheme } from './ThemeProvider';
-
-const NAV_LINKS = [
-  { label: 'About',      href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects',   href: '#projects' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'Contact',    href: '#contact' },
-];
+import { NAV_LINKS } from '@/shared/constants';
 
 export default function Sidebar() {
   const [activeId, setActiveId] = useState('');

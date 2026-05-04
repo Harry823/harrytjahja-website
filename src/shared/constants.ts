@@ -2,6 +2,14 @@ import { Project, SkillCategory, WorkExperience } from "./types";
 
 export const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
 
+export const NAV_LINKS = [
+  { label: 'About',      href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects',   href: '#projects' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Contact',    href: '#contact' },
+];
+
 
 export const ABOUT_ME = [
   "Software Engineer with 3+ years of experience building web and mobile platforms from system design to production release. Shipped React/TypeScript products used by thousands of users, integrated RESTful APIs into production codebases, and built automated testing pipelines that reduced QA overhead by 30%.",
