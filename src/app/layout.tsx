@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import ThemeProvider from "@/components/ThemeProvider";
+import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,11 +21,16 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <ThemeProvider>
+          <div className="bg-bg min-h-screen text-primary">
+            <Sidebar />
+            <main className="ml-[220px] px-16 pt-16 max-w-[860px]">
+              <div className="flex flex-col gap-[72px]">
+                {children}
+              </div>
+            </main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
