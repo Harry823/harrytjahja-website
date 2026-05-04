@@ -1,21 +1,14 @@
 import { Project, SkillCategory, WorkExperience } from "./types";
 
+export const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+
+
 export const ABOUT_ME = [
   "Software Engineer with 3+ years of experience building web and mobile platforms from system design to production release. Shipped React/TypeScript products used by thousands of users, integrated RESTful APIs into production codebases, and built automated testing pipelines that reduced QA overhead by 30%.",
   "I approach engineering problems by deeply understanding customer needs, weighing technical tradeoffs, and pushing for the right solution at the right time. I collaborate closely with Product, Design, and Support to resolve ambiguity and ship reliable, maintainable software."
 ];
 
 export const EXPERIENCE_LIST: WorkExperience[] = [
-  {
-    company: 'SF Bay Area Builders',
-    role: 'Hackathon Conference Volunteer',
-    experienceTime: 'Jul 2025 – Jan 2026',
-    positionDescription: [
-      'Facilitated check-in for 110+ attendees at a tech-focused monthly conference, ensuring registration and dev environment setup for each hackathon participant.',
-      'Built an LLM-powered Next.js web app with 2 developers, integrating market-analysis APIs to generate investment recommendations from voice input with confidence scores and cited sources.',
-      'Optimized the code review workflow with CodeRabbit AI, streamlining collaboration and earning an award for best use of the platform.',
-    ],
-  },
   {
     company: 'Yeti LLC',
     role: 'Junior Software Developer',

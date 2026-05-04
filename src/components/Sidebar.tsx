@@ -35,7 +35,8 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 w-[220px] h-screen overflow-y-auto z-50 bg-surface border-r border-border flex flex-col px-7 py-10">
+    <>
+    <aside className="hidden md:flex fixed left-0 top-0 w-[220px] h-screen overflow-y-auto z-50 bg-surface border-r border-border flex-col px-7 py-10">
       <NameBlock />
 
       <nav className="flex-1 mt-10 flex flex-col gap-1">
@@ -92,5 +93,16 @@ export default function Sidebar() {
         </button>
       </div>
     </aside>
+
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label="Toggle dark mode"
+      className="md:hidden fixed bottom-5 right-5 z-50 flex items-center gap-1.5 px-3 py-2 rounded-md bg-surface border border-border font-mono text-[11px] text-muted tracking-[0.06em] hover:text-accent transition-colors"
+    >
+      <span className="text-[13px]">{dark ? '☀' : '◑'}</span>
+      {dark ? 'LIGHT' : 'DARK'}
+    </button>
+    </>
   );
 }
