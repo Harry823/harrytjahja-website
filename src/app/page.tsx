@@ -55,8 +55,8 @@ const Home = () => {
         <SectionHeading>Experience</SectionHeading>
         <div className="flex flex-col gap-10">
           {EXPERIENCE_LIST.map((work, i) => (
-            <div key={i} className="grid gap-x-7" style={{ gridTemplateColumns: '100px 1fr' }}>
-              <span className="font-mono text-[11px] text-muted tracking-[0.04em] pt-0.5">
+            <div key={i} className="flex flex-col gap-1 md:grid md:grid-cols-[100px_1fr] md:gap-x-7">
+              <span className="font-mono text-[11px] text-muted tracking-[0.04em] md:pt-0.5">
                 {work.experienceTime}
               </span>
               <div>

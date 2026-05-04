@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
 /* ── Light mode (default) ── */
 :root {
   --color-bg:             #f2f7f8;
@@ -40,3 +45,6 @@
 
 html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; }
+
+section { scroll-margin-top: 5rem; }
+@media (min-width: 768px) { section { scroll-margin-top: 0; } }
