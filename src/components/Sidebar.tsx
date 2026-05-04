@@ -35,7 +35,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 w-[220px] h-screen overflow-y-auto z-50 bg-surface border-r border-border flex flex-col px-7 py-10">
+    <aside className="hidden md:flex fixed left-0 top-0 w-[220px] h-screen overflow-y-auto z-50 bg-surface border-r border-border flex-col px-7 py-10">
       <NameBlock />
 
       <nav className="flex-1 mt-10 flex flex-col gap-1">

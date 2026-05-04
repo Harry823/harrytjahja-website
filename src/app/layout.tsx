@@ -28,7 +28,7 @@ export default async function RootLayout({
         <ThemeProvider defaultDark={defaultDark}>
           <div className="bg-bg min-h-screen text-primary">
             <Sidebar />
-            <main className="ml-[220px] px-16 pt-16 max-w-[860px]">
+            <main className="md:ml-[220px] px-6 md:px-16 pt-16 max-w-[860px]">
               <div className="flex flex-col gap-[72px]">
                 {children}
               </div>
