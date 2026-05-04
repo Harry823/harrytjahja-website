@@ -45,3 +45,6 @@
 
 html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; }
+
+section { scroll-margin-top: 5rem; }
+@media (min-width: 768px) { section { scroll-margin-top: 0; } }
