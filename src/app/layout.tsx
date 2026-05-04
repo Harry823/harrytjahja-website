@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import ThemeProvider from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
+import MobileNav from "@/components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default async function RootLayout({
         <ThemeProvider defaultDark={defaultDark}>
           <div className="bg-bg min-h-screen text-primary">
             <Sidebar />
+            <MobileNav />
             <main className="md:ml-[220px] px-6 md:px-16 pt-16 max-w-[860px]">
               <div className="flex flex-col gap-[72px]">
                 {children}
