@@ -7,16 +7,6 @@ export const ABOUT_ME = [
 
 export const EXPERIENCE_LIST: WorkExperience[] = [
   {
-    company: 'SF Bay Area Builders',
-    role: 'Hackathon Conference Volunteer',
-    experienceTime: 'Jul 2025 – Jan 2026',
-    positionDescription: [
-      'Facilitated check-in for 110+ attendees at a tech-focused monthly conference, ensuring registration and dev environment setup for each hackathon participant.',
-      'Built an LLM-powered Next.js web app with 2 developers, integrating market-analysis APIs to generate investment recommendations from voice input with confidence scores and cited sources.',
-      'Optimized the code review workflow with CodeRabbit AI, streamlining collaboration and earning an award for best use of the platform.',
-    ],
-  },
-  {
     company: 'Yeti LLC',
     role: 'Junior Software Developer',
     experienceTime: 'Mar 2022 – May 2024',
