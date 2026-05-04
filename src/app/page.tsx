@@ -150,9 +150,6 @@ const Home = () => {
             View Resume
           </a>
         </div>
-        <div className="mt-16 pt-6 border-t border-border">
-          <p className="font-mono text-[10px] text-muted tracking-[0.1em]">© 2025 HARRY TJAHJA</p>
-        </div>
       </section>
     </>
   );
