@@ -1,5 +1,8 @@
 import { Project, SkillCategory, WorkExperience } from "./types";
 
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+
+
 export const ABOUT_ME = [
   "Software Engineer with 3+ years of experience building web and mobile platforms from system design to production release. Shipped React/TypeScript products used by thousands of users, integrated RESTful APIs into production codebases, and built automated testing pipelines that reduced QA overhead by 30%.",
   "I approach engineering problems by deeply understanding customer needs, weighing technical tradeoffs, and pushing for the right solution at the right time. I collaborate closely with Product, Design, and Support to resolve ambiguity and ship reliable, maintainable software."

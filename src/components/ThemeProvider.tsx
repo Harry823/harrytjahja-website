@@ -4,10 +4,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeCtx = createContext({ dark: false, toggle: () => {} });
 export const useTheme = () => useContext(ThemeCtx);
 
-export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [dark, setDark] = useState<boolean>(() =>
-    typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'true'
-  );
+export default function ThemeProvider({
+  children,
+  defaultDark,
+}: {
+  children: React.ReactNode;
+  defaultDark: boolean;
+}) {
+  const [dark, setDark] = useState(defaultDark);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
@@ -16,7 +20,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   const toggle = () => {
     const next = !dark;
     setDark(next);
-    localStorage.setItem('darkMode', String(next));
+    document.cookie = `darkMode=${next}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
   };
 
   return <ThemeCtx.Provider value={{ dark, toggle }}>{children}</ThemeCtx.Provider>;
