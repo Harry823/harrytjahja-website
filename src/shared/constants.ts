@@ -1,6 +1,6 @@
 import { Project, SkillCategory, WorkExperience } from "./types";
 
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+export const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
 
 
 export const ABOUT_ME = [

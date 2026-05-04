@@ -1,5 +1,6 @@
 'use client';
 import { createContext, useContext, useEffect, useState } from 'react';
+import { COOKIE_MAX_AGE } from '@/shared/constants';
 
 const ThemeCtx = createContext({ dark: false, toggle: () => {} });
 export const useTheme = () => useContext(ThemeCtx);
