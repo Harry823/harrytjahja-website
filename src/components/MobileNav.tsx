@@ -1,28 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
 import { NAV_LINKS } from '@/shared/constants';
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 export default function MobileNav() {
-  const [activeId, setActiveId] = useState('');
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const winner = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (winner) setActiveId(winner.target.id);
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    );
-
-    NAV_LINKS.forEach(({ href }) => {
-      const el = document.querySelector(href);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const activeId = useActiveSection(NAV_LINKS.map(({ href }) => href));
 
   return (
     <header className="md:hidden sticky top-0 z-40 bg-surface border-b border-border px-6 py-3">

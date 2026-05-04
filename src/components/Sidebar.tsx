@@ -1,31 +1,12 @@
 'use client';
-import { useEffect, useState } from 'react';
 import NameBlock from './NameBlock';
 import { useTheme } from './ThemeProvider';
 import { NAV_LINKS } from '@/shared/constants';
+import { useActiveSection } from '@/hooks/useActiveSection';
 
 export default function Sidebar() {
-  const [activeId, setActiveId] = useState('');
+  const activeId = useActiveSection(NAV_LINKS.map(({ href }) => href));
   const { dark, toggle } = useTheme();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const winner = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (winner) setActiveId(winner.target.id);
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    );
-
-    NAV_LINKS.forEach(({ href }) => {
-      const el = document.querySelector(href);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
