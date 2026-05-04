@@ -9,6 +9,7 @@ export default function MobileNav() {
     <header className="md:hidden sticky top-0 z-40 bg-surface border-b border-border px-6 py-3">
       <div className="flex items-center justify-center mb-2">
         <button
+          aria-label="Scroll to top"
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-[15px] font-semibold text-primary tracking-[-0.02em]"
