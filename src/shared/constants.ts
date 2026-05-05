@@ -1,76 +1,63 @@
-import { Project, WorkExperience } from "./types";
+import { Project, SkillCategory, WorkExperience } from "./types";
+
+export const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+
+export const NAV_LINKS = [
+  { label: 'About',      href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects',   href: '#projects' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Contact',    href: '#contact' },
+];
+
 
 export const ABOUT_ME = [
-  "I’m a software engineer with over 3 years of experience building web and mobile\
-  applications used by thousands of users. I’m passionate about bringing designs to\
-  life—turning prototypes into intuitive, feature-rich user experiences built for usability.",
-  "My core expertise lies in React and React Native. I’ve contributed to developing scalable\
-  UI components across a variety of projects, including a skincare-focused mobile app with\
-  IoT device integration, a web platform created to break the Guinness World Record for the\
-  largest online photo album of smiling mouths, and a promotional sweepstakes website\
-  supporting a wine company’s marketing campaign.",
-  "I thrive at the intersection of design and development,\
-  and enjoy crafting seamless digital experiences that people love to use."
-]
+  "Software Engineer with 3+ years of experience building web and mobile platforms from system design to production release. Shipped React/TypeScript products used by thousands of users, integrated RESTful APIs into production codebases, and built automated testing pipelines that reduced QA overhead by 30%.",
+  "I approach engineering problems by deeply understanding customer needs, weighing technical tradeoffs, and pushing for the right solution at the right time. I collaborate closely with Product, Design, and Support to resolve ambiguity and ship reliable, maintainable software."
+];
 
 export const EXPERIENCE_LIST: WorkExperience[] = [
   {
-    companyPosition: 'Software Developer - Yeti LLC',
-    experienceTime: '2022 - 2024',
+    company: 'Yeti LLC',
+    role: 'Junior Software Developer',
+    experienceTime: 'Mar 2022 – May 2024',
     positionDescription: [
-      '- Integrated an internal sprint point tracking system for the company’s app,\
-        integrating JIRA’s API to fetch and store project sprint data in a Render Postgres database.\
-        Automated daily data retrieval with a CRON job and optimized access using Prisma ORM,\
-        ensuring seamless and up-to-date project tracking.',
-      '- Translated responsive designed prototypes into a fully functional web app using React\
-        and Material UI, leveraging Zustand for state management to process and store over 20,000\
-        user-submitted images in Hygraph CMS.',
-      '- Developed an Express backend router to batch process user picture submissions and\
-        update statuses via a REST API endpoint. This feature was integrated with an internal\
-        admin portal, enabling client moderators to approve image submissions 5x faster,\
-        significantly improving moderation efficiency.',
-      '- Integrated multilingual support to a non-profit donation website using Hygraph and Redux,\
-        enabling seamless language rendering. Improved shareability and user experience by\
-        streamlining navigation and centralizing previously dispersed content.'
-    ]
+      'Owned end-to-end development of an admin portal that optimized user image moderation by 5× for a non-profit online photo album, driving the platform to 21,274 unique photos and a Guinness World Record.',
+      'Designed an automated sprint point tracking system improving project managers\' workflow efficiency by 50%, connecting JIRA\'s API to a Postgres database via Prisma ORM with daily CRON-based ingestion.',
+      'Developed a React sweepstakes web app for a wine company, attracting 2,000+ new users with customized Material UI components built for reuse across future campaigns.',
+      'Reduced QA overhead by 30% by architecting automated testing pipelines using GitHub Actions, refactoring unit and integration tests in Jest to enforce continuous delivery standards.',
+    ],
   },
   {
-    companyPosition: 'Junior Software Engineer - Speckle',
-    experienceTime: '2020 - 2021',
+    company: 'Speckle Corp',
+    role: 'Associate Front End Software Engineer',
+    experienceTime: 'Aug 2020 – Sep 2021',
     positionDescription: [
-      '- Worked closely with the designer team and the company founder in an\
-        early-stage startup to develop a cross-platform mobile application for teaching public\
-        speaking skills. Delivered biweekly staging updates to Google Play Store and Apple App\
-        Store with a focus on bug fixes and feature enhancements.',
-      '- Managed a team of 4 internal testers to track user feedback, validate feature functionality,\
-        and ensure alignment with product requirements and the owner’s quality expectations.'
-  ]
+      'Led requirements gathering and product direction with stakeholders to deliver a cross-platform mobile app for teaching public speaking skills using React Native, shipping biweekly updates to the Google Play Store and Apple App Store.',
+      'Managed a team of 4 internal testers to track user feedback, validate feature functionality, and ensure alignment with product requirements and quality expectations.',
+    ],
   },
 ];
 
 export const PROJECT_LIST: Project[] = [
   {
-    projectName: 'WhyBot AI Mobile App',
-    experienceTime: 'June 2023',
-    projectDescription: 'Collaborated in a hackathon with developers at Yeti to integrrate OpenAI’s\
-     ChatGPT API to create a mobile app that dynamically responds to voice-inputted questions.\
-      Developed an interactive feature enabling users to request simplified explanations or\
-       continuously ask "why," showcasing the LLM model’s ability to condense and refine information.'
+    projectName: 'AI News Curator',
+    experienceTime: 'Aug – Oct 2025',
+    projectDescription: 'A React Native app powered by Google Gemini AI to generate personalized news feeds. Integrated and validated API endpoints via Postman, using the Gemini LLM to rank and surface articles by user preference.',
+    tags: ['React Native', 'Google Gemini', 'Postman', 'REST API'],
   },
   {
     projectName: 'FinPal – Stock Portfolio Financial Advisor',
-    experienceTime: 'August 2025',
-    projectDescription: 'Developed an AI-powered Next.js web app that delivers investment advice\
-     from voice-inputted prompts. Integrated an API that analyzes market data and generates clear\
-      and simple recommendations with confidence scores, rationale, and cited sources.'
+    experienceTime: 'Jul 2025',
+    projectDescription: 'LLM-powered Next.js web app built at a hackathon that delivers investment advice from voice-inputted prompts. Integrated market-analysis APIs to generate clear recommendations with confidence scores, rationale, and cited sources. Awarded best use of CodeRabbit AI.',
+    tags: ['Next.js', 'TypeScript', 'LLM', 'Voice API', 'CodeRabbit AI'],
   },
-  {
-    projectName: 'AI News Curator',
-    experienceTime: 'August 2025 – Present',
-    projectDescription: 'Developed a React Native mobile app utilizing Google Gemini AI \
-    to personalize news curation based on user interests. Evaluated API endpoints with\
-      Postman to assess scalability and use cases, and integrated them to gather articles \
-      from various sources. Applied Gemini LLM to filter fetched articles and deliver the most \
-      relevant articles aligned with user preferences.'
-  }
+];
+
+export const SKILLS_LIST: SkillCategory[] = [
+  { category: 'Languages',    items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'C++'] },
+  { category: 'Frontend',     items: ['React', 'React Native', 'Next.js', 'Tailwind CSS', 'Redux', 'HTML', 'CSS', 'Material UI'] },
+  { category: 'Backend',      items: ['Node.js', 'Express', 'REST APIs', 'CRON Jobs'] },
+  { category: 'Testing & CI', items: ['Jest', 'GitHub Actions', 'CodeRabbit AI'] },
+  { category: 'Tools',        items: ['Git', 'Postman', 'Vercel'] },
 ];

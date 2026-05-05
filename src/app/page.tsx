@@ -1,112 +1,158 @@
-import { ExperienceContainer, HeadingCopy, MainContainer, PageCopy, ResumeButton, SubheaderCopy, SubTitleContainer, YearLabel } from "@/components/styles";
-import { ABOUT_ME, EXPERIENCE_LIST, PROJECT_LIST } from '@/shared/constants';
-import { Link, List, ListItem, Stack } from "@mui/material";
+import { ABOUT_ME, EXPERIENCE_LIST, PROJECT_LIST, SKILLS_LIST } from '@/shared/constants';
+import SectionHeading from '@/components/SectionHeading';
+import Tag from '@/components/Tag';
+
+const RESUME_URL = 'https://drive.google.com/file/d/1QA7Qe8Ym_btNkhf602gmjAEGaxkChkPb/view?usp=drive_link';
 
 const Home = () => {
   return (
-    <MainContainer spacing="72px">
-      <Stack>
-        <HeadingCopy variant="h1" mb="14px">Harry Tjahja</HeadingCopy>
-        <SubTitleContainer>
-          <SubheaderCopy variant="h3" mb="20px">Software Developer</SubheaderCopy>
-          <PageCopy variant="h5">
-            I build seamless, user-friendly app solutions for both web and mobile platforms
-          </PageCopy>
-        </SubTitleContainer>
-      </Stack>
-      <Stack spacing="36px" id="about-me">
-        <SubheaderCopy variant="h3">
-          About Me
-        </SubheaderCopy>
-        <Stack gap="14px">
-          {ABOUT_ME.map((paragraph, id) => (
-            <PageCopy variant="body1" key={id}>
-              {paragraph}
-            </PageCopy>
-          ))}
-        </Stack>
-      </Stack>
-      <Stack spacing="24px" id="experience">
-        <SubheaderCopy variant="h3" mb="12px">
-          Experience
-        </SubheaderCopy>
-        {EXPERIENCE_LIST.map((work, i) => (
-          <ExperienceContainer key={i}>
-            <YearLabel variant="h6">
-              {work.experienceTime}
-            </YearLabel>
-            <SubheaderCopy variant="h3">
-              {work.companyPosition}
-            </SubheaderCopy>
-            <List dense disablePadding>
-              {work.positionDescription.map((point, i) => (
-                  <ListItem key={i}>
-                    <PageCopy variant="body1">
-                      {point}
-                    </PageCopy>
-                  </ListItem>
-              ))}
-            </List>
-          </ExperienceContainer>
-        ))}
-      </Stack>
-      <Stack spacing="24px" id="experience">
-        <SubheaderCopy variant="h3" margin="24px 0">
-          Projects
-        </SubheaderCopy>
-        {PROJECT_LIST.map((project, i) => (
-          <Stack key={i}>
-            <YearLabel variant="h6">
-              {project.experienceTime}
-            </YearLabel>
-            <SubheaderCopy variant="h3" margin="0 0 16px">
-              {project.projectName}
-            </SubheaderCopy>
-            <PageCopy variant="body1" mb="24px">
-              {project.projectDescription}
-            </PageCopy>
-          </Stack>
-        ))}
-      </Stack>
-      <Stack spacing="24px" id="contact-me">
-        <SubheaderCopy variant="h3">
-          Get in Touch
-        </SubheaderCopy>
-        <PageCopy variant="h5">
-          I&apos;m currently open for new opportunities!
-          Feel free to reach out to me through{' '}
-          <Link href="https://www.linkedin.com/in/harrytjahja" target="_blank" color="#025f5f">
-            LinkedIn
-          </Link>
-          {' '}or{' '}
-          <Link href="mailto:hdtjahja@gmail.com" color="#025f5f">
-            email.
-          </Link>
-        </PageCopy>
-        <ResumeButton
-          underline="none"
-          href="https://drive.google.com/file/d/1QA7Qe8Ym_btNkhf602gmjAEGaxkChkPb/view?usp=drive_link"
-          target="_blank"
+    <>
+      {/* Intro */}
+      <section id="intro" className="pb-20 border-b border-border">
+        <p className="font-mono text-[11px] text-muted tracking-[0.1em] uppercase mb-5">
+          Available for new opportunities
+        </p>
+        <h1
+          className="font-semibold text-primary tracking-[-0.03em] leading-[1.1] mb-5"
+          style={{ fontSize: 'clamp(40px, 5vw, 60px)' }}
         >
-          View Full Resume
-        </ResumeButton>
-      </Stack>
-      <PageCopy align="right">
-        Built with{' '}
-        <Link href="https://nextjs.org/" target="_blank" color="#025f5f">
-            Next.js
-        </Link>
-        {' '}and{' '}
-        <Link href="https://mui.com/" target="_blank" color="#025f5f">
-          Material UI
-        </Link>
-        , deployed using{' '}
-        <Link href="http://vercel.com/" target="_blank" color="#025f5f">
-          Vercel.
-        </Link>
-      </PageCopy>
-    </MainContainer>
+          Harry Tjahja
+        </h1>
+        <p className="text-[18px] text-secondary leading-relaxed max-w-[520px] mb-8">
+          Product · Fullstack · Frontend Engineer — building seamless digital experiences
+          at the intersection of design and engineering.
+        </p>
+        <div className="flex gap-3 flex-wrap">
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] font-medium transition-opacity hover:opacity-90"
+          >
+            View Resume
+          </a>
+          <a
+            href="#contact"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="pb-[72px] border-b border-border">
+        <SectionHeading>About</SectionHeading>
+        <div className="flex flex-col gap-4 max-w-[620px]">
+          {ABOUT_ME.map((p, i) => (
+            <p key={i} className="text-[15px] leading-[1.75] text-secondary">{p}</p>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="pb-[72px] border-b border-border">
+        <SectionHeading>Experience</SectionHeading>
+        <div className="flex flex-col gap-10">
+          {EXPERIENCE_LIST.map((work, i) => (
+            <div key={i} className="flex flex-col gap-1 md:grid md:grid-cols-[100px_1fr] md:gap-x-7">
+              <span className="font-mono text-[11px] text-muted tracking-[0.04em] md:pt-0.5">
+                {work.experienceTime}
+              </span>
+              <div>
+                <p className="text-[15px] font-semibold text-primary">{work.role}</p>
+                <p className="text-[13px] font-medium text-accent mb-3">@ {work.company}</p>
+                <ul className="flex flex-col gap-2">
+                  {work.positionDescription.map((point, j) => (
+                    <li key={j} className="flex gap-2.5">
+                      <span className="text-[10px] text-accent mt-1 shrink-0">▸</span>
+                      <span className="text-[14px] leading-[1.7] text-secondary">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="pb-[72px] border-b border-border">
+        <SectionHeading>Projects</SectionHeading>
+        <div className="flex flex-col gap-4">
+          {PROJECT_LIST.map((project, i) => (
+            <div
+              key={i}
+              className="px-7 py-6 rounded-lg border border-border bg-surface transition-colors hover:border-accent hover:bg-surface-hover"
+            >
+              <div className="flex items-start justify-between mb-3">
+                <p className="text-[15px] font-semibold text-primary">{project.projectName}</p>
+                <span className="font-mono text-[10px] text-muted tracking-[0.04em] shrink-0 ml-4">
+                  {project.experienceTime}
+                </span>
+              </div>
+              <p className="text-[13px] leading-[1.7] text-secondary mb-4">
+                {project.projectDescription}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <Tag key={tag} label={tag} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="pb-[72px] border-b border-border">
+        <SectionHeading>Skills</SectionHeading>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
+          {SKILLS_LIST.map((group) => (
+            <div key={group.category}>
+              <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-accent mb-2.5">
+                {group.category}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {group.items.map((item) => (
+                  <Tag key={item} label={item} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="pb-20">
+        <SectionHeading>Get in Touch</SectionHeading>
+        <div className="flex gap-3 flex-wrap">
+          <a
+            href="https://www.linkedin.com/in/harrytjahja"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:hdtjahja@gmail.com"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+          >
+            Email
+          </a>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] font-medium transition-opacity hover:opacity-90"
+          >
+            View Resume
+          </a>
+        </div>
+      </section>
+    </>
   );
-}
+};
 
 export default Home;
