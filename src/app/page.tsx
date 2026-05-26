@@ -9,16 +9,15 @@ const Home = () => {
     <>
       {/* Intro */}
       <section id="intro" className="pb-20 border-b border-border">
-        <p className="font-mono text-[11px] text-muted tracking-[0.1em] uppercase mb-5">
+        <p className="font-mono text-[11px] xl:text-[15px] text-muted tracking-[0.1em] uppercase mb-5">
           Available for new opportunities
         </p>
         <h1
-          className="font-semibold text-primary tracking-[-0.03em] leading-[1.1] mb-5"
-          style={{ fontSize: 'clamp(40px, 5vw, 60px)' }}
+          className="text-[clamp(40px,5vw,90px)] font-semibold text-primary tracking-[-0.03em] leading-[1.1] mb-5"
         >
           Harry Tjahja
         </h1>
-        <p className="text-[18px] text-secondary leading-relaxed max-w-[520px] mb-8">
+        <p className="text-[18px] xl:text-[26px] text-secondary leading-relaxed max-w-[520px] xl:max-w-[680px] mb-8">
           Product · Fullstack · Frontend Engineer — building seamless digital experiences
           at the intersection of design and engineering.
         </p>
@@ -27,13 +26,13 @@ const Home = () => {
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] font-medium transition-opacity hover:opacity-90"
+            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] xl:text-[17px] font-medium transition-opacity hover:opacity-90"
           >
             View Resume
           </a>
           <a
             href="#contact"
-            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] xl:text-[17px] transition-colors hover:border-accent hover:text-accent-text"
           >
             Get in Touch
           </a>
@@ -45,7 +44,7 @@ const Home = () => {
         <SectionHeading>About</SectionHeading>
         <div className="flex flex-col gap-4 max-w-[620px]">
           {ABOUT_ME.map((p, i) => (
-            <p key={i} className="text-[15px] leading-[1.75] text-secondary">{p}</p>
+            <p key={i} className="text-[15px] xl:text-[22px] leading-[1.75] text-secondary">{p}</p>
           ))}
         </div>
       </section>
@@ -56,17 +55,17 @@ const Home = () => {
         <div className="flex flex-col gap-10">
           {EXPERIENCE_LIST.map((work, i) => (
             <div key={i} className="flex flex-col gap-1 md:grid md:grid-cols-[100px_1fr] md:gap-x-7">
-              <span className="font-mono text-[11px] text-muted tracking-[0.04em] md:pt-0.5">
+              <span className="font-mono text-[11px] xl:text-[15px] text-muted tracking-[0.04em] md:pt-0.5">
                 {work.experienceTime}
               </span>
               <div>
-                <p className="text-[15px] font-semibold text-primary">{work.role}</p>
-                <p className="text-[13px] font-medium text-accent mb-3">@ {work.company}</p>
+                <p className="text-[15px] xl:text-[22px] font-semibold text-primary">{work.role}</p>
+                <p className="text-[13px] xl:text-[17px] font-medium text-accent mb-3">@ {work.company}</p>
                 <ul className="flex flex-col gap-2">
                   {work.positionDescription.map((point, j) => (
                     <li key={j} className="flex gap-2.5">
-                      <span className="text-[10px] text-accent mt-1 shrink-0">▸</span>
-                      <span className="text-[14px] leading-[1.7] text-secondary">{point}</span>
+                      <span className="text-[10px] xl:text-[14px] text-accent mt-1 shrink-0">▸</span>
+                      <span className="text-[14px] xl:text-[20px] leading-[1.7] text-secondary">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -86,12 +85,12 @@ const Home = () => {
               className="px-7 py-6 rounded-lg border border-border bg-surface transition-colors hover:border-accent hover:bg-surface-hover"
             >
               <div className="flex items-start justify-between mb-3">
-                <p className="text-[15px] font-semibold text-primary">{project.projectName}</p>
-                <span className="font-mono text-[10px] text-muted tracking-[0.04em] shrink-0 ml-4">
+                <p className="text-[15px] xl:text-[22px] font-semibold text-primary">{project.projectName}</p>
+                <span className="font-mono text-[10px] xl:text-[14px] text-muted tracking-[0.04em] shrink-0 ml-4">
                   {project.experienceTime}
                 </span>
               </div>
-              <p className="text-[13px] leading-[1.7] text-secondary mb-4">
+              <p className="text-[13px] xl:text-[18px] leading-[1.7] text-secondary mb-4">
                 {project.projectDescription}
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -110,7 +109,7 @@ const Home = () => {
         <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
           {SKILLS_LIST.map((group) => (
             <div key={group.category}>
-              <p className="font-mono text-[10px] tracking-[0.1em] uppercase text-accent mb-2.5">
+              <p className="font-mono text-[10px] xl:text-[14px] tracking-[0.1em] uppercase text-accent mb-2.5">
                 {group.category}
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -131,13 +130,13 @@ const Home = () => {
             href="https://www.linkedin.com/in/harrytjahja"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] xl:text-[17px] transition-colors hover:border-accent hover:text-accent-text"
           >
             LinkedIn
           </a>
           <a
             href="mailto:hdtjahja@gmail.com"
-            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] transition-colors hover:border-accent hover:text-accent-text"
+            className="px-5 py-2.5 rounded-md border border-border text-secondary text-[13px] xl:text-[17px] transition-colors hover:border-accent hover:text-accent-text"
           >
             Email
           </a>
@@ -145,7 +144,7 @@ const Home = () => {
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] font-medium transition-opacity hover:opacity-90"
+            className="px-5 py-2.5 rounded-md bg-cta text-white text-[13px] xl:text-[17px] font-medium transition-opacity hover:opacity-90"
           >
             View Resume
           </a>
