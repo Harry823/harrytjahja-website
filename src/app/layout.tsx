@@ -30,7 +30,7 @@ export default async function RootLayout({
           <div className="bg-bg min-h-screen text-primary">
             <Sidebar />
             <MobileNav />
-            <main className="md:ml-[220px] 3xl:ml-[320px] px-6 md:px-16 3xl:px-24 pt-16 max-w-[860px] 3xl:max-w-[1100px]">
+            <main className="md:ml-[220px] xl:ml-[320px] px-6 md:px-16 3xl:px-24 pt-16 max-w-[860px] 3xl:max-w-[1100px]">
               <div className="flex flex-col gap-[72px]">
                 {children}
               </div>
