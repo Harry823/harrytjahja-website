@@ -13,8 +13,7 @@ const Home = () => {
           Available for new opportunities
         </p>
         <h1
-          className="font-semibold text-primary tracking-[-0.03em] leading-[1.1] mb-5"
-          style={{ fontSize: 'clamp(40px, 5vw, 90px)' }}
+          className="text-[clamp(40px,5vw,90px)] font-semibold text-primary tracking-[-0.03em] leading-[1.1] mb-5"
         >
           Harry Tjahja
         </h1>
