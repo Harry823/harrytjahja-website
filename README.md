@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Harry Tjahja — Personal Portfolio
+
+Personal portfolio site built with Next.js 16 App Router and Tailwind CSS.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS with CSS custom properties for theming
+- **Fonts:** DM Sans (body), DM Mono (labels/tags) via Google Fonts
+- **Package manager:** pnpm
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm dev      # start dev server at localhost:3000
+pnpm build    # production build
+pnpm lint     # ESLint on src/
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── globals.css       # CSS custom properties (color tokens, light/dark)
+│   ├── layout.tsx        # Root layout — font loading, dark mode cookie, ThemeProvider
+│   └── page.tsx          # Single page with all sections
+├── components/
+│   ├── MobileNav.tsx     # Sticky top nav shown below md breakpoint
+│   ├── NameBlock.tsx     # Name and title display
+│   ├── SectionHeading.tsx
+│   ├── Sidebar.tsx       # Fixed 220px sidebar (nav, social links, theme toggle)
+│   ├── Tag.tsx           # Skill/tech tag pill
+│   └── ThemeProvider.tsx # Context for { dark, toggle }; exposes useTheme()
+├── hooks/
+│   └── useActiveSection.ts  # IntersectionObserver hook for sidebar nav active state
+└── shared/
+    ├── constants.ts      # All portfolio content (bio, experience, projects, skills)
+    └── types.ts          # WorkExperience, Project, SkillCategory types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Desktop (md and above):** Fixed 220px sidebar + scrollable main content offset with `ml-[220px]`. The sidebar has three zones — name/logo, nav links with scroll-spy active state, and social links with dark mode toggle.
 
-## Deploy on Vercel
+**Mobile (below md):** Sidebar hidden; sticky top nav replaces it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Theming
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Dark mode is persisted via a `darkMode` cookie (written on toggle, read server-side in `layout.tsx`). The resolved class is pre-applied on `<html>` to prevent hydration flash. Color tokens are defined as CSS custom properties in `globals.css` and aliased in `tailwind.config.ts` so they're usable as `bg-bg`, `text-accent`, etc.
+
+## Content
+
+All portfolio content lives in `src/shared/constants.ts` — bio paragraphs, work experience, projects, and skill categories. Update this file to change site content without touching any component.
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Push to `main` to trigger a production deploy.
