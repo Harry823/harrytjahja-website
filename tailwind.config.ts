@@ -5,6 +5,9 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        '3xl': '2560px',
+      },
       fontFamily: {
         sans: ['"DM Sans"', 'sans-serif'],
         mono: ['"DM Mono"', 'monospace'],
