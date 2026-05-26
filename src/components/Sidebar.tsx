@@ -23,17 +23,10 @@ export default function Sidebar() {
               href={href}
               className={
                 isActive
-                  ? 'flex items-center gap-2.5 px-2.5 py-2 xl:px-3 xl:py-2.5 rounded-md text-[13px] xl:text-[18px] font-medium text-accent bg-accent-subtle'
-                  : 'flex items-center gap-2.5 px-2.5 py-2 xl:px-3 xl:py-2.5 rounded-md text-[13px] xl:text-[18px] text-secondary hover:text-primary transition-colors'
+                  ? 'flex items-center px-2.5 py-2 xl:px-3 xl:py-2.5 rounded-md text-[13px] xl:text-[18px] font-medium text-accent bg-accent-subtle'
+                  : 'flex items-center px-2.5 py-2 xl:px-3 xl:py-2.5 rounded-md text-[13px] xl:text-[18px] text-secondary hover:text-primary transition-colors'
               }
             >
-              <span
-                className={
-                  isActive
-                    ? 'w-1 h-1 xl:w-1.5 xl:h-1.5 rounded-full bg-dot shrink-0'
-                    : 'w-1 h-1 xl:w-1.5 xl:h-1.5 rounded-full border border-border shrink-0'
-                }
-              />
               {label}
             </a>
           );
