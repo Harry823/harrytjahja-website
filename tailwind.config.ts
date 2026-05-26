@@ -5,7 +5,7 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-fontFamily: {
+      fontFamily: {
         sans: ['"DM Sans"', 'sans-serif'],
         mono: ['"DM Mono"', 'monospace'],
       },
